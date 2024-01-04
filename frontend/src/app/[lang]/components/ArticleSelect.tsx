@@ -37,10 +37,9 @@ export default function ArticleSelect({
     category: string;
   };
 }) {
-
   return (
     <div className="p-4 rounded-lg dark:bg-gray-900 min-h-[365px] relative">
-      <h4 className="text-xl font-semibold">Browse By Category</h4>
+      <h4 className="text-xl font-semibold">Вибір по категоріях</h4>
 
       <div>
         <div className="flex flex-wrap py-6 space-x-2 dark:border-gray-400">
@@ -51,7 +50,7 @@ export default function ArticleSelect({
                 href={`/blog/${category.attributes.slug}`}
                 className={selectedFilter(
                   category.attributes.slug,
-                  params.category
+                  params.category,
                 )}
               >
                 #{category.attributes.name}
@@ -72,10 +71,9 @@ export default function ArticleSelect({
                   <Link
                     rel="noopener noreferrer"
                     href={`/blog/${params.category}/${article.attributes.slug}`}
-                    className={`${
-                      params.slug === article.attributes.slug &&
+                    className={`${params.slug === article.attributes.slug &&
                       "text-violet-400"
-                    }  hover:underline hover:text-violet-400 transition-colors duration-200`}
+                      }  hover:underline hover:text-violet-400 transition-colors duration-200`}
                   >
                     {article.attributes.title}
                   </Link>

@@ -18,12 +18,12 @@ export default function FormSubmit({
 
   async function handleSubmit() {
     if (email === "") {
-      setErrorMessage("Email cannot be blank.");
+      setErrorMessage("Поштова адреса не може бути пустою.");
       return;
     }
 
     if (!emailRegex.test(email)) {
-      setErrorMessage("Invalid email format.");
+      setErrorMessage("Неправильний імейл.");
       return;
     }
 
@@ -37,11 +37,11 @@ export default function FormSubmit({
     });
 
     if (!res.ok) {
-      setErrorMessage("Email failed to submit.");
+      setErrorMessage("Форму не відправлено.");
       return;
     }
     setErrorMessage("");
-    setSuccessMessage("Email successfully submitted!");
+    setSuccessMessage("Форму успішно відправлено!");
     setEmail("");
   }
 
