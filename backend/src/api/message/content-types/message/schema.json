@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "message": {
+      "type": "text"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "повідомлення",
+        "прохання",
+        "порада",
+        "запит про молитву",
+        "свідчення"
+      ]
+    }
+  }
+}

@@ -18,6 +18,7 @@
     "@types/react": "18.2.33",
     "@types/react-dom": "18.2.14",
     "classnames": "^2.3.2",
+    "eslint": "^8.56.0",
     "negotiator": "^0.6.3",
     "next": "^14.0.0",
     "qs": "^6.11.2",
@@ -30,7 +31,11 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.3",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
     "autoprefixer": "^10.4.16",
+    "babel-eslint": "^10.1.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5"
   }
