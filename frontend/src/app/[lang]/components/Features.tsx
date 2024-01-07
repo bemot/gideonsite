@@ -18,6 +18,7 @@ interface Feature {
   text: string;
 }
 
+
 function Feature({ title, description, showLink, newTab, url, text }: Feature) {
   return (
     <div className="flex flex-col items-center p-4">

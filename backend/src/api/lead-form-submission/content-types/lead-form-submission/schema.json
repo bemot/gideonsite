@@ -9,8 +9,6 @@
     "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": false
   },
   "attributes": {
@@ -24,6 +22,12 @@
         "contacted",
         "ignored"
       ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
     }
   }
 }

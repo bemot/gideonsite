@@ -24,6 +24,17 @@
     },
     "description": {
       "type": "text"
+    },
+    "message": {
+      "type": "richtext"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "повідомлення:",
+        "свідчення",
+        "молитовний запит"
+      ]
     }
   }
 }

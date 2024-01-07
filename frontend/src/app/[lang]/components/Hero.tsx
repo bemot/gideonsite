@@ -73,7 +73,7 @@ export default function Hero({ data }: HeroProps) {
               data.picture.data.attributes.alternativeText || "none provided"
             }
             className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 "
-            width={600}
+            width={800}
             height={600}
           />
         </div>
