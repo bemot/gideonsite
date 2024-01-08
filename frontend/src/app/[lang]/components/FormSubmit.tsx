@@ -55,7 +55,7 @@ export default function FormSubmit({
   }
 
   return (
-    <div className="flex items-center justify-center shadow-md">
+    <div className="flex items-center justify-left shadow-md">
       <div className="flex-col">
 
         {successMessage ? (
@@ -64,29 +64,30 @@ export default function FormSubmit({
           </p>
         ) : (
           <>
-            <label htmlFor="message" className="text-gray-700 my-2">
-              email
-            </label>
-            <input
-              type="email"
-              placeholder={errorMessage_email || placeholder}
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              className="w-full p-3 rounded-lg text-gray-700 my-2"
-            />
-
-
-            <label htmlFor="message" className="text-gray-700 my-2">
-              Message
-            </label>
-            <input
-              type="message"
-              placeholder={errorMessage_message}
-              onChange={(e) => setMessage(e.target.value)}
-              value={message}
-              className="w-full p-3 rounded-lg text-gray-700 my-2"
-            />
-
+            <div>
+              <label >
+                email
+              </label>
+              <input
+                type="email"
+                placeholder={errorMessage_email || placeholder}
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                className="w-full p-4 rounded-lg text-gray-700 my-4"
+              />
+            </div>
+            <div>
+              <label >
+                Message
+              </label>
+              <input
+                type="message"
+                placeholder={errorMessage_message}
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
+                className="w-full p-4 rounded-lg text-gray-700 my-4"
+              />
+            </div>
             <button
               type="button"
               className="w-full p-3 font-semibold rounded-lg dark:bg-violet-400 dark:text-gray-900 my-2"
