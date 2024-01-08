@@ -13,7 +13,7 @@
       "required": true
     },
     "description": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "picture": {
@@ -28,6 +28,11 @@
       "type": "component",
       "repeatable": true,
       "component": "links.button-link"
+    },
+    "youtubevideo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.video-embed"
     }
   }
 }

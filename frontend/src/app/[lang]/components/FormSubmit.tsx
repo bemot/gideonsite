@@ -12,24 +12,25 @@ export default function FormSubmit({
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("")
   const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage_email, setErrorMessage_email] = useState("");
+  const [errorMessage_message, setErrorMessage_message] = useState("");
   const token = process.env.NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN;
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   async function handleSubmit() {
     if (email === "") {
-      setErrorMessage("Email cannot be blank.");
+      setErrorMessage_email("Email cannot be blank.");
       return;
     }
     if (message === "") {
-      setErrorMessage("Message cannot be blank.");
+      setErrorMessage_message("Message cannot be blank.");
       return;
     }
 
 
     if (!emailRegex.test(email)) {
-      setErrorMessage("Invalid email format.");
+      setErrorMessage_email("Invalid email format.");
       return;
     }
 
@@ -43,46 +44,47 @@ export default function FormSubmit({
     });
 
     if (!res.ok) {
-      setErrorMessage("Email failed to submit.");
+      setErrorMessage_email("Email failed to submit.");
       return;
     }
-    setErrorMessage("");
+    setErrorMessage_email("");
+    setErrorMessage_message("");
+
     setSuccessMessage("Email successfully submitted!");
     setEmail("");
   }
 
   return (
-    <div className="flex flex-col items-center justify-center shadow-md">
-      <div className="flex flex-col">
+    <div className="flex items-center justify-center shadow-md">
+      <div className="flex-col">
 
         {successMessage ? (
-          <p className="text-green-700 bg-green-700 px-4 py-2 rounded-lg">
+          <p className="text-green-700 bg-green-300 px-4 py-2 rounded-lg">
             {successMessage}
           </p>
         ) : (
           <>
             <label htmlFor="message" className="text-gray-700 my-2">
+              email
+            </label>
+            <input
+              type="email"
+              placeholder={errorMessage_email || placeholder}
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              className="w-full p-3 rounded-lg text-gray-700 my-2"
+            />
+
+
+            <label htmlFor="message" className="text-gray-700 my-2">
               Message
             </label>
             <input
-              id="message"
               type="message"
-              placeholder={errorMessage}
+              placeholder={errorMessage_message}
               onChange={(e) => setMessage(e.target.value)}
               value={message}
-              className="w-full p-3 rounded-lg text-gray-700"
-            />
-
-            <label htmlFor="email" className="text-gray-700 my-2">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              placeholder={errorMessage || placeholder}
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              className="w-full p-3 rounded-lg text-gray-700"
+              className="w-full p-3 rounded-lg text-gray-700 my-2"
             />
 
             <button
@@ -95,11 +97,13 @@ export default function FormSubmit({
           </>
         )}
 
-        {errorMessage && (
+        {errorMessage_email && (
           <p className="text-red-500 bg-red-200 px-4 py-2 rounded-lg my-2">
-            {errorMessage}
+            {errorMessage_email}
           </p>
+
         )}
+
       </div>
     </div>
   );
